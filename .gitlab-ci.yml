@@ -7,7 +7,7 @@
 before_script:
   - echo "Before script section"
   - kubectl delete configmap prometheussss -n prod
-  - kubectl create configmap prometheussss --from-file=./  -n prod
+  - kubectl create configmap prometheussss --from-file=configmap/  -n prod
    
 after_script:
   - echo "After script section"
