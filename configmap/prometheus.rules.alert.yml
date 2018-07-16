@@ -15,7 +15,7 @@ groups:
      severity: page
     annotations:
      summary: "Instance {{ $labels:instance }} down"
-     description: "{{ $labels.instance }} of job {{ $labels.job }} has been down more than  five mintuis"
+     description: "{{ $labels.instance }} of job {{ $labels.job }} has been down more than  five mintuis: current value: {{ $value }}"
   - alert: APIHighRequestLatency
     expr: api_http_request_latencies_second{quantile="0.5"} > 1
     for: 10m
