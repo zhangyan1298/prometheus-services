@@ -4,7 +4,6 @@ global:
   monitor: "codelab-monitor"
 rule_files:
  - 'prometheus.rules.yml'
- - 'prometheus.rules.alert.yml'
 alerting:
  alertmanagers:
   - static_configs:
