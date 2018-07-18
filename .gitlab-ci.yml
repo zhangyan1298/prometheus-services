@@ -18,6 +18,8 @@ build1:
   - master-shell
   stage: build
   script:
+    - kubectl delete configmap prometheussss -n prod || echo 1
+    - kubectl create configmap prometheussss --from-file=configmap/  -n prod
     - kubectl delete pod `kubectl get pod -n prod|awk '/prometheus/{print $1}'` -n prod
 #   - kubectl apply -f prometheus-k8s.yaml -n prod
    
