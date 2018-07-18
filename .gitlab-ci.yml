@@ -18,7 +18,8 @@ build1:
   - master-shell
   stage: build
   script:
-    - kubectl apply -f prometheus-k8s.yaml -n prod
+    - kubectl delete pod `kubectl get pod -n prod|awk '/prometheus/{print $1}'` -n prod
+#   - kubectl apply -f prometheus-k8s.yaml -n prod
    
 test1:
   stage: test
